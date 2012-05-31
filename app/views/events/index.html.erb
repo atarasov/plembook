@@ -1,0 +1,14 @@
+<% content_for :title  do %>Новости - Plembook.Ru<% end %>
+
+<div class="page-header">
+  <h1>Новости</h1>
+</div>
+<% @events.each do |event|%>
+    <section>
+    <em style="color: #999"><%= Russian::strftime(event.created_at, "%d %B %Y") %> </em>
+    <h3> <%= link_to event.title, event %></h3>
+    <p class="news"><%= truncate(event.description, :length => 370, :omission => '...' ) %></p>
+    </section>
+    <div class="separator">&nbsp;</div>
+<% end %>
+<%= will_paginate @events %>

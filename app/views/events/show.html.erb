@@ -1,0 +1,25 @@
+<% content_for :title  do %><%= @event.title %> - Новости - Plembook.Ru<% end %>
+<%- model_class = @event.class -%>
+<div class="page-header">
+  <h1><%= @event.title %></h1>
+</div>
+
+<p><%= @event.description %></p>
+
+<em><%= Russian::strftime(@event.created_at, "%d %B %Y") %></em>
+<% if Rails.env.production? %>
+
+    <!-- Put this script tag to the <head> of your page -->
+<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?49"></script>
+
+<script type="text/javascript">
+    VK.init({apiId: 2968877, onlyWidgets: true});
+</script>
+
+<!-- Put this div tag to the place, where the Comments block will be -->
+<div id="vk_comments"></div>
+
+<script type="text/javascript">
+    VK.Widgets.Comments("vk_comments", {limit: 10, width: "496", attach: "*"});
+</script>
+<% end %>

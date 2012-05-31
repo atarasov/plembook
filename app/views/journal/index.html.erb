@@ -1,0 +1,30 @@
+<div class="row show-grid">
+<div class="span3">
+  <div class="well sidebar-nav">
+    <h3>Категории журнала</h3>
+    <ul class="nav nav-list">
+      <% @categories.each do |category| %>
+          <li><%= link_to category.title, journal_category_url(category.id)  %> </li>
+      <% end %>
+
+    </ul>
+  </div><!--/.well -->
+</div>
+
+<div class="span9">
+  <div class="page-header">
+  <h1>Журнал</h1>
+  </div>
+  <% @articles.each do |article| %>
+      <section>
+      <h3><%= link_to article.title, journal_category_article_url(article.category.id, article.id) %></h3>
+      <p><%= truncate(article.description, :length => 370, :omission => '...' ) %></p>
+      <em style="color: #999"><%= Russian::strftime(article.created_at, "%d %B %Y") %> </em>
+      </section>
+      <div class="separator">&nbsp;</div>
+  <% end %>
+  <%= will_paginate @articles %>
+</div>
+</div>
+
+

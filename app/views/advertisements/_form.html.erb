@@ -1,0 +1,47 @@
+<%= form_for @advertisement, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :ad_type_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :ad_type_id, @adv_type, :id,  :name, {:prompt => "Выберите тип"}, :class => 'select_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :category_of_ads_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :category_of_ads_id, @category_of_ads, :id,  :name, {:prompt => "Выберите категорию"}, :class => 'select_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label 'Название', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "Описание" , :class => 'control-label'%>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "Мальчик", :class => 'control-label'%>
+    <div class="controls">
+      <%= f.check_box :sex, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "Контактный телефон", :class => 'control-label' %>
+    <div class="controls">
+      <div class="input-prepend">
+      <span class="add-on">+7</span>
+      <%= f.text_field :phone, :id=>'prepended'%>
+    </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Создать", :class => 'btn btn-primary' %>
+    <%= link_to "Отмена",
+                advertisements_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<div class="page-header">
+  <h1>Объявления </h1><br/>
+  <%= link_to 'Добавить объявление', new_advertisement_url, :class => 'btn btn-primary' %>
+</div>
+
+<% @advertisements.each do |advertisement|%>
+    <section>
+      <em style="color: #999"><%= Russian::strftime(advertisement.created_at, "%d %B %Y") %> </em>
+      <h3> <%= link_to advertisement.title, advertisement %></h3>
+      <p class="news"><%= truncate(advertisement.description, :length => 370, :omission => '...' ) %></p>
+    </section>
+    <div class="separator">&nbsp;</div>
+<% end %>
+<%= will_paginate @advertisements %>
+
+<%= link_to "Добавить объявление", new_advertisement_path, :class => 'btn btn-primary' %>

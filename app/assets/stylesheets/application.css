@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+
+.navbar .brand {
+    color: #DD4B39 !important;
+}
+
+.footer{
+    border-top-color: #E5E5E5;
+    border-top-style: solid;
+    border-top-width: 1px;
+    margin-top: 45px;
+    padding-bottom: 36px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 35px;
+}
+
+
+.separator{
+    border-top-color: #E5E5E5;
+    border-top-style: solid;
+    border-top-width: 1px;
+    margin: 10px 0;
+    clear: both;
+    height: 5px
+}
+
+em{font-style: normal !important; color: #999999; cursor: default;}
+
+.pagination em, .pagination .gap, .previous_page, .disabled{
+    float: left;
+    border: 1px solid #DDDDDD;
+    border-left: none;
+    line-height: 34px;
+    padding-bottom: 0;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 0;
+}
+em.current{background-color: #F5F5F5 !important;}
+
+.previous_page{border-left: 1px solid #DDDDDD !important;}
