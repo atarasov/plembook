@@ -25,8 +25,8 @@ gem 'rich'
 gem 'nokogiri'
 gem 'hpricot'
 gem 'anemone'
-gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
-
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem "net-ssh",  '2.4.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
